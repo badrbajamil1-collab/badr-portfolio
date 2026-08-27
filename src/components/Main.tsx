@@ -1,31 +1,38 @@
-import React from "react";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import '../assets/styles/Main.scss';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { personalInfo } from "../data/resumeData";
 
-function Main() {
+const AVATAR_URL = "https://github.com/badrfaez1.png";
+
+export function Main() {
+  const [avatarFailed, setAvatarFailed] = useState(false);
 
   return (
-    <div className="container">
-      <div className="about-section">
-        <div className="image-wrapper">
-          <img src="https://my-aws-assets.s3.us-west-2.amazonaws.com/portfolio-img/avatar_circle.jpeg" alt="Avatar" />
+    <section id="home" className="hero">
+      <div className="hero-inner">
+        <div className="hero-text">
+          <h1>{personalInfo.name}</h1>
+          <p className="hero-role">{personalInfo.title}</p>
+          <p className="hero-bio">{personalInfo.bio}</p>
+          <div className="hero-links">
+            <a className="icon" href={personalInfo.github} target="_blank" rel="noreferrer" aria-label="GitHub"><FontAwesomeIcon icon={faGithub as IconProp} /></a>
+            <a className="icon" href={personalInfo.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin as IconProp} /></a>
+            <a className="icon" href={`mailto:${personalInfo.email}`} aria-label="Email"><FontAwesomeIcon icon={faEnvelope as IconProp} /></a>
+          </div>
+          <a className="link-arrow" href="#experience">Learn more about me →</a>
         </div>
-        <div className="content">
-          <div className="social_icons">
-            <a href="https://github.com/yujisatojr" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/yujisato/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-          </div>
-          <h1>Yuji Sato</h1>
-          <p>Full Stack Engineer</p>
-
-          <div className="mobile_social_icons">
-            <a href="https://github.com/yujisatojr" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/yujisato/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-          </div>
+        <div className="hero-avatar">
+          {avatarFailed ? (
+            <div className="avatar-fallback">BB</div>
+          ) : (
+            <img className="avatar" src={AVATAR_URL} alt={personalInfo.name} onError={() => setAvatarFailed(true)} />
+          )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

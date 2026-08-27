@@ -1,43 +1,61 @@
-import React, {useState, useEffect} from "react";
+import React, { useEffect } from "react";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import {
   Main,
-  Timeline,
-  Expertise,
+  Experience,
   Project,
+  Education,
+  Leadership,
+  Expertise,
   Contact,
   Navigation,
   Footer,
 } from "./components";
 import FadeIn from './components/FadeIn';
+import ProjectDetail from './pages/ProjectDetail';
 import './index.scss';
 
-function App() {
-    const [mode, setMode] = useState<string>('dark');
-
-    const handleModeChange = () => {
-        if (mode === 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
-    }
+function HomePage() {
+    const location = useLocation();
 
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+        const scrollTarget = (location.state as { scrollTo?: string } | null)?.scrollTo;
+        if (scrollTarget && scrollTarget !== 'home') {
+            const timer = setTimeout(() => {
+                const el = document.getElementById(scrollTarget);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 60);
+            return () => clearTimeout(timer);
+        }
+        window.scrollTo({top: 0, left: 0});
+    }, [location.state]);
 
     return (
-    <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-        <FadeIn transitionDuration={700}>
+    <div className="main-container">
+        <FadeIn transitionDuration={500} delay={30}>
             <Main/>
-            <Expertise/>
-            <Timeline/>
+            <Experience/>
             <Project/>
+            <Education/>
+            <Leadership/>
+            <Expertise/>
             <Contact/>
         </FadeIn>
         <Footer />
     </div>
+    );
+}
+
+function App() {
+    return (
+        <>
+            <Navigation />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/project/:slug" element={<ProjectDetail />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </>
     );
 }
 

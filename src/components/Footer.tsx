@@ -1,16 +1,26 @@
 import React from "react";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import '../assets/styles/Footer.scss'
+import { personalInfo } from "../data/resumeData";
 
 function Footer() {
   return (
-    <footer>
-      <div>
-        <a href="https://github.com/yujisatojr" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-        <a href="https://www.linkedin.com/in/yujisato/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+    <footer className="footer">
+      <div className="footer-inner">
+        <div className="footer-col">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+        </div>
+        <div className="footer-col">
+          <a href={personalInfo.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={personalInfo.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={`mailto:${personalInfo.email}`}>Email</a>
+        </div>
+        <div className="footer-col">
+          <a href="/resume.pdf" download>Resume</a>
+          <a href={`mailto:${personalInfo.email}`}>Let's talk</a>
+          <span>{personalInfo.location}</span>
+        </div>
       </div>
-      <p>A portfolio designed & built by <a href="https://github.com/yujisatojr/react-portfolio-template" target="_blank" rel="noreferrer">Yuji Sato</a> with 💜</p>
     </footer>
   );
 }
