@@ -32,6 +32,10 @@ function Navigation() {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
+        <a className="nav-brand" href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}>
+          BF
+        </a>
+        <div className="nav-divider" />
         {links.map(([label, id]) => (
           <a key={id} className="nav-link" href={`/#${id}`} onClick={(e) => goTo(e, id)}>
             {label}

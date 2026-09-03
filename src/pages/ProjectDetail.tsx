@@ -101,11 +101,6 @@ function ProjectDetail() {
         </div>
 
         <div className="project-page-actions">
-          {readmeUrl && (
-            <a href={readmeUrl} target="_blank" rel="noreferrer" className="btn">
-              <FontAwesomeIcon icon={faGithub as IconProp} /> View README on GitHub
-            </a>
-          )}
           {project.link && (
             <a
               href={project.link}
@@ -113,7 +108,7 @@ function ProjectDetail() {
               rel="noreferrer"
               className="btn"
             >
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare as IconProp} /> GitHub
+              <FontAwesomeIcon icon={faGithub as IconProp} /> View on GitHub
             </a>
           )}
           {project.live && (

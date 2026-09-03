@@ -80,6 +80,16 @@ export const projectsData: ProjectData[] = [
     highlight: "AUC-ROC 0.9059 on UCF-Crime benchmark; 3 concurrent streams @ >15 FPS on RTX 3060 with 6-page Flask dashboard and 15+ REST APIs."
   },
   {
+    title: "VerdantVista – AI Wellbeing Platform",
+    slug: "verdantvista",
+    period: "Oct 2024",
+    description: "Full-stack AI web application featuring an image-based emotion classifier and a journaling chatbot powered by Firebase AI SDK + Gemini.",
+    techStack: ["Next.js", "TypeScript", "Gemini AI", "Firebase", "Tailwind CSS"],
+    link: "https://github.com/badrfaez1/verdantvista",
+    repo: "badrfaez1/verdantvista",
+    highlight: "Built in 24-hr hackathon with real-time Firestore sync and Firebase Auth."
+  },
+  {
     title: "Hungo – Food Bank Finder",
     slug: "hungo",
     period: "May 2024",
@@ -95,7 +105,8 @@ export const projectsData: ProjectData[] = [
     period: "Feb 2024",
     description: "Team-built Java RPG game integrating a locally-run Gemma 2 2B LLM for intelligent NPC dialogue and dynamic world events.",
     techStack: ["Java (Swing)", "Gemma 2 2B LLM", "Git"],
-    link: "https://github.com/badrfaez1",
+    link: "https://github.com/badrfaez1/WIA_2007_GroupProject",
+    repo: "badrfaez1/WIA_2007_GroupProject",
     highlight: "Led game design & architecture; embedded local LLM inference for rich NPC interactions."
   }
 ];
