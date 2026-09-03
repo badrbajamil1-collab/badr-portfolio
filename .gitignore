@@ -21,3 +21,19 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# LLM workspace copy (model_deepseek)
+/model_deepseek
+
+# IDE and editor folders
+/.vscode
+/.cursor
+/.agents
+
+# Random folder (local data)
+/Random
+
+# Skills and config
+skills-lock.json
+postcss.config.js
+tailwind.config.js

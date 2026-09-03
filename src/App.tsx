@@ -13,7 +13,9 @@ import {
 } from "./components";
 import FadeIn from './components/FadeIn';
 import ProjectDetail from './pages/ProjectDetail';
+import { AIChatDemo } from './pages/AIChatDemo';
 import './index.scss';
+import './tailwind.css';
 
 function HomePage() {
     const location = useLocation();
@@ -53,6 +55,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/project/:slug" element={<ProjectDetail />} />
+                <Route path="/ai-chat" element={<AIChatDemo />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </>

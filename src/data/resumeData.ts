@@ -75,18 +75,9 @@ export const projectsData: ProjectData[] = [
     period: "Oct 2025 – Present",
     description: "Real-time AI pipeline fusing YOLO11s-Pose skeletal tracking, Lucas-Kanade optical flow, and X3D-XS visual context via a custom Lightweight Temporal Transformer.",
     techStack: ["PyTorch", "YOLOv8", "Flask", "Transformers", "Deep Streaming LDA"],
-    link: "https://github.com/badrfaez1",
+    link: "https://github.com/badrbajamil1-collab/FYP2",
+    repo: "badrbajamil1-collab/FYP2",
     highlight: "AUC-ROC 0.9059 on UCF-Crime benchmark; 3 concurrent streams @ >15 FPS on RTX 3060 with 6-page Flask dashboard and 15+ REST APIs."
-  },
-  {
-    title: "VerdantVista – AI Wellbeing Platform",
-    slug: "verdantvista",
-    period: "Oct 2024",
-    description: "Full-stack AI web application featuring an image-based emotion classifier and a journaling chatbot powered by Firebase AI SDK + Gemini.",
-    techStack: ["Next.js", "TypeScript", "Gemini AI", "Firebase", "Tailwind CSS"],
-    link: "https://github.com/badrfaez1/verdantvista",
-    repo: "badrfaez1/verdantvista",
-    highlight: "Built in 24-hr hackathon with real-time Firestore sync and Firebase Auth."
   },
   {
     title: "Hungo – Food Bank Finder",
