@@ -52,15 +52,19 @@ export const skillsData: SkillCategory[] = [
   },
   {
     category: "AI / ML",
-    skills: ["PyTorch", "YOLOv8 / YOLO11", "Transformers", "Deep Streaming LDA", "Optical Flow", "Gemma 2 2B / Gemini AI", "Firebase AI SDK"]
+    skills: ["PyTorch", "YOLO11", "Transformers", "Deep Streaming LDA", "Optical Flow", "Gemma 2 2B / Gemini AI", "Firebase AI SDK"]
   },
   {
     category: "AI-Assisted Development",
-    skills: ["Claude Code", "Cursor", "Antigravity", "Prompt Engineering"]
+    skills: ["Claude Code", "Cursor", "Antigravity", "GitHub Copilot", "Human-in-the-Loop Oversight", "Prompt & Context Engineering", "Agentic Workflows", "AI Output Validation", "Prompt Engineering"]
   },
   {
     category: "Frameworks",
     skills: ["Next.js / React", "Flask", "Node.js", "Android SDK / Java", "Telegram Bot API"]
+  },
+  {
+    category: "Cloud & DevOps",
+    skills: ["AWS", "IoT Core", "Kinesis", "EKS", "EventBridge", "Aurora", "SNS", "CloudFormation", "Docker", "Kubernetes"]
   },
   {
     category: "Databases & Tools",
@@ -74,10 +78,11 @@ export const projectsData: ProjectData[] = [
     slug: "polyflow",
     period: "Oct 2025 – Present",
     description: "Real-time AI pipeline fusing YOLO11s-Pose skeletal tracking, Lucas-Kanade optical flow, and X3D-XS visual context via a custom Lightweight Temporal Transformer.",
-    techStack: ["PyTorch", "YOLOv8", "Flask", "Transformers", "Deep Streaming LDA"],
+    techStack: ["PyTorch", "YOLO11", "Flask", "Transformers", "Deep Streaming LDA"],
     link: "https://github.com/badrbajamil1-collab/FYP2",
     repo: "badrbajamil1-collab/FYP2",
-    highlight: "AUC-ROC 0.9059 on UCF-Crime benchmark; 3 concurrent streams @ >15 FPS on RTX 3060 with 6-page Flask dashboard and 15+ REST APIs."
+    highlight: "AUC-ROC 0.9059 on UCF-Crime benchmark; 3 concurrent streams @ >15 FPS on RTX 3060 with 6-page Flask dashboard and 15+ REST APIs.",
+    image: "aws-architecture",
   },
   {
     title: "VerdantVista – AI Wellbeing Platform",

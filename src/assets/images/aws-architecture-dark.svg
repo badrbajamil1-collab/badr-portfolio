@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 320" width="1080" height="320" role="img" aria-labelledby="title desc">
+  <title id="title">PolyFlow — AWS Pipeline (Dark)</title>
+  <desc id="desc">Dark thumbnail: IoT → Kinesis → EKS → EventBridge → Aurora/SNS inside AWS Cloud. Minimal polyline for card.</desc>
+  <defs>
+    <filter id="ds" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrD" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+  </defs>
+  <!-- dark canvas blends into project-card -->
+  <rect width="1080" height="320" rx="16" fill="#0a0a0f"/>
+  <!-- AWS group: subtle -->
+  <rect x="12" y="12" width="1056" height="296" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)" stroke-width="1.4" stroke-dasharray="10 7"/>
+  <g transform="translate(26,24)">
+    <rect x="0" y="0" width="108" height="20" rx="10" fill="rgba(255,153,0,0.14)" stroke="rgba(255,153,0,0.28)" stroke-width="1"/>
+    <rect x="8" y="6" width="8" height="8" rx="2" fill="#FF9900"/>
+    <text x="20" y="14.5" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" letter-spacing="0.06em" fill="#ffd9a6">AWS Cloud</text>
+  </g>
+
+  <!-- 4 core cards — larger, no tiny port labels, bolder text for 320px thumbnail -->
+  <!-- IoT -->
+  <g filter="url(#ds)">
+    <rect x="28" y="62" width="178" height="104" rx="14" fill="#12121a" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+    <rect x="28" y="62" width="178" height="26" rx="14" fill="rgba(255,255,255,0.05)"/>
+    <rect x="28" y="75" width="178" height="13" fill="rgba(255,255,255,0.05)"/>
+    <text x="117" y="79" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" letter-spacing="0.11em" fill="#8b8ba8">SERVER</text>
+    <g transform="translate(96,96)">
+      <rect x="0" y="0" width="26" height="26" rx="7" fill="rgba(255,153,0,0.16)" stroke="#FF9900" stroke-width="1.1"/>
+      <text x="13" y="18" text-anchor="middle" font-size="13" fill="#FF9900">◉</text>
+    </g>
+    <text x="117" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#f0f0f5">IoT Core</text>
+    <text x="117" y="157" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#a0a0b8">Greengrass</text>
+  </g>
+  <circle cx="206" cy="114" r="3.2" fill="#cbd5e1" stroke="#0a0a0f" stroke-width="1.1"/>
+
+  <!-- Kinesis -->
+  <g filter="url(#ds)">
+    <rect x="252" y="62" width="178" height="104" rx="14" fill="#12121a" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+    <rect x="252" y="62" width="178" height="26" rx="14" fill="rgba(255,255,255,0.05)"/>
+    <rect x="252" y="75" width="178" height="13" fill="rgba(255,255,255,0.05)"/>
+    <text x="341" y="79" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" letter-spacing="0.11em" fill="#8b8ba8">SERVER</text>
+    <g transform="translate(320,96)">
+      <rect x="0" y="0" width="26" height="26" rx="7" fill="rgba(255,153,0,0.16)" stroke="#FF9900" stroke-width="1.1"/>
+      <text x="13" y="18" text-anchor="middle" font-size="13" fill="#FF9900">≋</text>
+    </g>
+    <text x="341" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#f0f0f5">Kinesis</text>
+    <text x="341" y="157" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#a0a0b8">Streams</text>
+  </g>
+  <circle cx="252" cy="114" r="3.2" fill="#6b7280" stroke="#0a0a0f" stroke-width="1.1"/>
+  <circle cx="430" cy="114" r="3.2" fill="#cbd5e1" stroke="#0a0a0f" stroke-width="1.1"/>
+
+  <!-- EKS -->
+  <g filter="url(#ds)">
+    <rect x="476" y="62" width="178" height="104" rx="14" fill="#12121a" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+    <rect x="476" y="62" width="178" height="26" rx="14" fill="rgba(255,255,255,0.05)"/>
+    <rect x="476" y="75" width="178" height="13" fill="rgba(255,255,255,0.05)"/>
+    <text x="565" y="79" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" letter-spacing="0.11em" fill="#8b8ba8">SERVER</text>
+    <g transform="translate(544,96)">
+      <rect x="0" y="0" width="26" height="26" rx="7" fill="rgba(255,153,0,0.16)" stroke="#FF9900" stroke-width="1.1"/>
+      <text x="13" y="18" text-anchor="middle" font-size="13" fill="#FF9900">⬢</text>
+    </g>
+    <text x="565" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#f0f0f5">EKS Pods</text>
+    <text x="565" y="157" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#a0a0b8">isolated</text>
+  </g>
+  <circle cx="476" cy="114" r="3.2" fill="#6b7280" stroke="#0a0a0f" stroke-width="1.1"/>
+  <circle cx="654" cy="114" r="3.2" fill="#cbd5e1" stroke="#0a0a0f" stroke-width="1.1"/>
+
+  <!-- EventBridge hub -->
+  <g filter="url(#ds)">
+    <rect x="700" y="62" width="178" height="104" rx="14" fill="#12121a" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+    <rect x="700" y="62" width="178" height="26" rx="14" fill="rgba(255,255,255,0.09)"/>
+    <rect x="700" y="75" width="178" height="13" fill="rgba(255,255,255,0.09)"/>
+    <text x="789" y="79" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="0.09em" fill="#e2e8f0">HUB</text>
+    <g transform="translate(768,96)">
+      <rect x="0" y="0" width="26" height="26" rx="7" fill="#FF9900"/>
+      <text x="13" y="18" text-anchor="middle" font-size="13" fill="#ffffff">⬡</text>
+    </g>
+    <text x="789" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#f0f0f5">EventBridge</text>
+    <text x="789" y="157" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#a0a0b8">bus</text>
+  </g>
+  <circle cx="700" cy="114" r="3.2" fill="#6b7280" stroke="#0a0a0f" stroke-width="1.1"/>
+
+  <!-- collapsed Aurora+SNS as pill badges below hub (hint, not full cards) -->
+  <g transform="translate(700,182)">
+    <rect x="0" y="0" width="86" height="22" rx="11" fill="#0f172a" stroke="#1e3a8a" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3.5" fill="#3b82f6"/>
+    <text x="44" y="15" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" fill="#bfdbfe">AURORA</text>
+  </g>
+  <g transform="translate(792,182)">
+    <rect x="0" y="0" width="86" height="22" rx="11" fill="#0f172a" stroke="#7c4a0a" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3.5" fill="#FF9900"/>
+    <text x="44" y="15" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" fill="#ffedd5">SNS</text>
+  </g>
+  <!-- small branching hints -->
+  <path d="M 789 166 L 789 182" fill="none" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <path d="M 743 182 L 789 182 L 835 182" fill="none" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- polylines — thick, high-contrast for thumbnail -->
+  <polyline points="206,114 229,114 252,114" fill="none" stroke="#cbd5e1" stroke-width="2.1" stroke-linecap="round" marker-end="url(#arrD)"/>
+  <polyline points="430,114 453,114 476,114" fill="none" stroke="#cbd5e1" stroke-width="2.1" stroke-linecap="round" marker-end="url(#arrD)"/>
+  <polyline points="654,114 677,114 700,114" fill="none" stroke="#cbd5e1" stroke-width="2.1" stroke-linecap="round" marker-end="url(#arrD)"/>
+
+  <text x="1062" y="298" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#475569">polyline • dark • tap to expand</text>
+</svg>

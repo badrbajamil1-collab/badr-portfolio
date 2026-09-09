@@ -81,6 +81,14 @@ function ProjectDetail() {
     ? `https://github.com/${project.repo}`
     : undefined;
 
+  const resolveImgSrc = (src?: string) => {
+    if (!src || !project?.repo) return src;
+    if (/^(https?:|data:|blob:)/.test(src)) return src;
+    const clean = src.replace(/^\.\//, "").replace(/^\//, "");
+    // handle html comment style already absolute
+    return `https://raw.githubusercontent.com/${project.repo}/HEAD/${clean}`;
+  };
+
   return (
     <div className="project-page">
       <div className="section project-header">
@@ -151,11 +159,22 @@ function ProjectDetail() {
             </div>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
+              urlTransform={(uri) => {
+                // keep hash/anchors, handle relative images via resolveImgSrc in img component
+                if (uri.startsWith("#")) return uri;
+                if (/^(https?:|mailto:|tel:)/.test(uri)) return uri;
+                if (project?.repo) return `https://raw.githubusercontent.com/${project.repo}/HEAD/${uri.replace(/^\.\//, "")}`;
+                return uri;
+              }}
               components={{
                 a: ({ children, ...props }) => (
                   <a {...props} target="_blank" rel="noreferrer">
                     {children}
                   </a>
+                ),
+                img: ({ src, alt, ...props }) => (
+                  // eslint-disable-next-line jsx-a11y/alt-text
+                  <img src={resolveImgSrc(src)} alt={alt || ""} loading="lazy" {...props} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                 ),
               }}
             >
